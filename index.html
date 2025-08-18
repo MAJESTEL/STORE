@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عالم صغيري - منتجات صُممت لطفلك</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- خط عربي حديث وواضح -->
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Nunito:wght@400;600;700&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /* نفس التصميم بالضبط بدون تغيير */
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Nunito:wght@400;600;700&display=swap');
+        :root {
+            --primary-blue: #A8E6CF;
+            --primary-pink: #FFD1DC;
+            --primary-purple: #E0BBE4;
+            --primary-yellow: #FFF9C4;
+            --dark-blue: #2C3E50;
+            --white: #FFFFFF;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Almarai', 'Tajawal', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        /*moving top bar*/
+        .top-offer-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #FF9AA2, #FFDAC1, #E2F0CB, #B5EAD7, #C7CEEA);
+            color: var(--dark-blue);
+            padding: 8px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .offer-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scrollText 30s linear infinite;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        @keyframes scrollText {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        /*hero section*/
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-pink));
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="white" opacity="0.1"/></svg>') no-repeat;
+            background-size: 100% 100%;
+        }
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .baby-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        .baby-icon {
+            font-size: 2.5rem;
+            color: #FFB7B2;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-family: 'Quicksand', cursive;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-blue);
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #444;
+        }
+        .hero .value-statement {
+            background: rgba(255,255,255,0.95);
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            color: #555;
+            margin: 15px 0 25px;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .countdown-container {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            display: inline-block;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(5px);
+        }
+        .countdown-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+        .countdown {
+            display: flex;
+            gap: 15px;
+        }
+        .countdown-box {
+            background: var(--dark-blue);
+            color: white;
+            min-width: 70px;
+            padding: 12px 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .countdown-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, #6A5ACD, #9370DB);
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 25px;
+            box-shadow: 0 6px 15px rgba(106, 90, 205, 0.4);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(106, 90, 205, 0.6);
+            border-color: white;
+        }
+        /*products section*/
+        .products {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-family: 'Quicksand', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--dark-blue);
+            position: relative;
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-blue), var(--primary-pink));
+            border-radius: 2px;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        .product-image {
+            height: 220px;
+            background: linear-gradient(45deg, #F8F9FA, #E9ECEF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-image::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        .product-icon {
+            font-size: 5rem;
+            color: var(--dark-blue);
+            opacity: 0.7;
+        }
+        .product-details {
+            padding: 25px;
+        }
+        .product-title {
+            font-family: 'Quicksand', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+        .product-description {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .product-features {
+            margin-top: 10px;
+            list-style: none;
+            padding: 0;
+        }
+        .product-features li {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+        }
+        .product-features li::before {
+            content: "✓";
+            color: white;
+            background: #4CAF50;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 8px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        .product-price {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--dark-blue);
+            margin: 20px 0;
+            display: block;
+        }
+        .add-to-cart {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary-purple), #B5EAD7);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .add-to-cart:hover {
+            background: linear-gradient(to right, #B5EAD7, var(--primary-purple));
+            transform: scale(1.05);
+        }
+        /*offer section*/
+        .offer-section {
+            background: url('image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23FFD1DC" opacity="0.2"/><path d="M0,50 Q50,0 100,50 T200,50" fill="none" stroke="%23FF9AA2" stroke-width="1" opacity="0.3"/></svg>');
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .offer-badge {
+            background: linear-gradient(45deg, #FF5252, #FF4081);
+            color: white;
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(255, 66, 82, 0.3);
+        }
+        .offer-description {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.3rem;
+            color: #444;
+        }
+        .offer-steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .step {
+            background: linear-gradient(135deg, #FFF9C4, #E0F7FA);
+            padding: 25px;
+            border-radius: 15px;
+            flex: 1;
+            min-width: 250px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+        .step:hover {
+            transform: translateY(-5px);
+        }
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--dark-blue);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-bottom: 15px;
+            margin: 0 auto 15px;
+        }
+        .step h3 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+        .step p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        /*reviews section*/
+        .reviews {
+            padding: 80px 20px;
+            background-color: #F8F9FA;
+        }
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .section-title {
+            text-align: center;
+            font-family: 'Quicksand', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--dark-blue);
+            position: relative;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+        .review-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        .review-card::before {
+            content: """;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 4rem;
+            color: var(--primary-pink);
+            font-family: Georgia, serif;
+            line-height: 1;
+            opacity: 0.2;
+        }
+        .review-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        .reviewer {
+            display: flex;
+            align-items: center;
+        }
+        .reviewer-avatar {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 12px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .reviewer-info h4 {
+            color: var(--dark-blue);
+            margin-bottom: 3px;
+            font-size: 1.1rem;
+        }
+        .reviewer-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        /*order form*/
+        .order-section {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .order-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #E0E0E0;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        .form-row .form-group {
+            flex: 1;
+        }
+        .submit-btn {
+            background: linear-gradient(to right, #4CAF50, #66BB6A);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+        .payment-info {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        /*trust section*/
+        .trust-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-pink));
+            color: white;
+            text-align: center;
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            max-width: 1100px;
+            margin: 40px auto 0;
+        }
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            flex: 1;
+            min-width: 200px;
+            transition: all 0.3s ease;
+        }
+        .badge:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .badge-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .badge h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        /*shopping cart*/
+        .cart-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            background: #e53935;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100%;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 1001;
+            transition: right 0.4s ease;
+            overflow-y: auto;
+        }
+        .cart-sidebar.open {
+            right: 0;
+        }
+        .cart-header {
+            padding: 20px;
+            background: var(--primary-blue);
+            color: white;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .cart-items {
+            padding: 20px;
+        }
+        .cart-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+        .cart-item-image {
+            width: 60px;
+            height: 60px;
+            background: #F8F9FA;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+        }
+        .cart-item-details {
+            flex: 1;
+        }
+        .cart-item-title {
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 5px;
+        }
+        .cart-item-price {
+            color: #4CAF50;
+            font-weight: 600;
+        }
+        .cart-close {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0,0,0,0.1);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: none;
+        }
+        .overlay.open {
+            display: block;
+        }
+        /*whatsapp button - geometric shape*/
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: all 0.3s ease;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        /*responsive design*/
+        @media (max-width: 768px) {
+            .cart-icon {
+                bottom: 80px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Moving Top Offer Bar -->
+    <div class="top-offer-bar">
+        <div class="offer-text">🎉 اشترِ 3 منتجات، واحصل على رابع مجانًا بقيمة تصل إلى 1000 دج 🎁 | 🚚 توصيل سريع إلى جميع الولايات | ✅ منتجات آمنة 100% | 💬 دفع عند الاستلام متاح</div>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="baby-icons">
+                <i class="fas fa-baby-carriage baby-icon"></i>
+                <i class="fas fa-baby baby-icon"></i>
+                <i class="fas fa-baby-bottle baby-icon"></i>
+                <i class="fas fa-couch baby-icon"></i>
+                <i class="fas fa-bath baby-icon"></i>
+            </div>
+            <h1>عالم صغيري – حيث يبدأ الأمان، الدفء، والجودة من أول لمسة</h1>
+            <p>منتجاتنا مصممة بحب، ومختارة بعناية، لتناسب أصغر أفراد عائلتك، راحة بالك تبدأ من هنا</p>
+            <div class="countdown-container">
+                <div class="countdown-title">العرض ينتهي خلال:</div>
+                <div class="countdown">
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">يوم</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">ساعة</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">دقيقة</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">ثانية</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#order-section" class="cta-button">ابدأ التسوق الآن →</a>
+        </div>
+    </section>
+    <!-- Products Section -->
+    <section class="products">
+        <h2 class="section-title">منتجات صُممت لطفلك</h2>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-baby-bottle product-icon"></i>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">رضاعة ذكية مضادة للإمساك</h3>
+                    <p class="product-description">رضاعة ثورية مصممة بتقنية Air-Free لتقليل ابتلاع الهواء بنسبة 90%، مما يقلل من الانزعاج، الانتفاخ، والبكاء الليلي.</p>
+                    <ul class="product-features">
+                        <li>تقنية Air-Free لتقليل الهواء</li>
+                        <li>زجاج بورسليكات آمن</li>
+                        <li>حلمة ناعمة مثل الثدي الطبيعي</li>
+                        <li>سهلة التفكيك والتنظيف</li>
+                    </ul>
+                    <span class="product-price">1800 دج</span>
+                    <a href="#" class="add-to-cart" onclick="addToCart('رضاعة ذكية', 1800)">أضف إلى السلة ✅</a>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-bed product-icon" style="color: #B5EAD7;"></i>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">وسادة نوم ذكية لدعم الرأس</h3>
+                    <p class="product-description">وسادة طبية مصممة لحماية شكل رأس طفلك ومنع تسطح الرأس. مصنوعة من رغوة ذاكرة ناعمة تتكيف مع رأس الرضيع.</p>
+                    <ul class="product-features">
+                        <li>تقلل من تسطح الرأس</li>
+                        <li>رغوة ذاكرة ناعمة</li>
+                        <li>غطاء قابل للغسل</li>
+                        <li>تصميم على شكل فيل صغير</li>
+                    </ul>
+                    <span class="product-price">2200 دج</span>
+                    <a href="#" class="add-to-cart" onclick="addToCart('وسادة نوم', 2200)">أضف إلى السلة ✅</a>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-paw product-icon" style="color: #C7CEEA;"></i>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">لعب تطويرية من قماش عضوي</h3>
+                    <p class="product-description">مجموعة من 3 ألعاب تطويرية مصنوعة من قطن عضوي 100%، بألوان طبيعية غير سامة لتحفيز حواس طفلك.</p>
+                    <ul class="product-features">
+                        <li>قطن عضوي 100%</li>
+                        <li>ألوان طبيعية غير سامة</li>
+                        <li>تحفيز الحواس (لمس، صوت، بصر)</li>
+                        <li>آمنة إذا وضعها في فمه</li>
+                    </ul>
+                    <span class="product-price">1500 دج</span>
+                    <a href="#" class="add-to-cart" onclick="addToCart('لعب تطويرية', 1500)">أضف إلى السلة ✅</a>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-couch product-icon" style="color: #E0BBE4;"></i>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">سرير مهبط قابل للطي</h3>
+                    <p class="product-description">سرير صغير فاخر، خفيف الوزن، وسهل الطي – مثالي للسفر أو النوم الليلي. مصنوع من خشب طبيعي معتمد.</p>
+                    <ul class="product-features">
+                        <li>خشب طبيعي معتمد</li>
+                        <li>سهل الطي والنقل</li>
+                        <li>شبكة تنفس عالية</li>
+                        <li>مرتبة مضادة للحساسية</li>
+                    </ul>
+                    <span class="product-price">9900 دج</span>
+                    <a href="#" class="add-to-cart" onclick="addToCart('سرير مهبط', 9900)">أضف إلى السلة ✅</a>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-bath product-icon" style="color: #FFDAC1;"></i>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">حوض استحمام ذكي مع دعم رأس</h3>
+                    <p class="product-description">حوض استحمام مصمم حسب شكل جسم الرضيع، مع دعم رأس ورقبة مدمج لضمان السلامة. مصنوع من بلاستيك ناعم غير قابل للانزلاق.</p>
+                    <ul class="product-features">
+                        <li>دعم رأس ورقبة مدمج</li>
+                        <li>بلاستيك غير قابل للانزلاق</li>
+                        <li>مؤشر حرارة ملون</li>
+                        <li>سهل التخزين</li>
+                    </ul>
+                    <span class="product-price">2800 دج</span>
+                    <a href="#" class="add-to-cart" onclick="addToCart('حوض استحمام', 2800)">أضف إلى السلة ✅</a>
+                </div>
+            </div>
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-shoe-prints product-icon" style="color: #A8E6CF;"></i>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">أحذية أولى ناعمة</h3>
+                    <p class="product-description">أحذية أولى مصنوعة من جلد طبيعي ناعم، تسمح لقدم الطفل بالتنفس وتمكّنه من الشعور بالأرض – مهم جدًا لتطوير التوازن.</p>
+                    <ul class="product-features">
+                        <li>جلد طبيعي ناعم</li>
+                        <li>نعل مطاطي غير قابل للانزلاق</li>
+                        <li>تصميم يسمح بالشعور بالأرض</li>
+                        <li>تناسب البنين والبنات</li>
+                    </ul>
+                    <span class="product-price">1400 دج</span>
+                    <a href="#" class="add-to-cart" onclick="addToCart('أحذية أولى', 1400)">أضف إلى السلة ✅</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Offer Section -->
+    <section class="offer-section">
+        <div class="offer-badge">🎉 اشترِ 3 منتجات، واحصل على رابع مجانًا!</div>
+        <p class="offer-description">نريد أن نجعل تجربتك مع "عالم صغيري" لا تُنسى. كل عميل يشتري 3 منتجات، يختار منتجًا رابعًا مجانًا من القائمة (بقيمة ≤ 1000 دج).</p>
+        <div class="offer-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>أضف 3 منتجات</h3>
+                <p>اختر منتجاتك المفضلة وأضفها إلى سلة المشتريات</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>اختر هديتك المجانية</h3>
+                <p>في صفحة الدفع، اختر المنتج المجاني الذي تريده (بقيمة ≤ 1000 دج)</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>استلم كل شيء</h3>
+                <p>سيتم توصيل جميع المنتجات في نفس الطرد!</p>
+            </div>
+        </div>
+    </section>
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="reviews-container">
+            <h2 class="section-title">آراء عملائنا السعداء</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <p class="review-text">"أول مرة أشعر أن منتجات طفلي آمنة حقًا – شكرًا عالم صغيري! الرضاعة المضادة للإمساك غيرت نوم ابني تمامًا، لم يعد يعاني من الانتفاخ بعد الرضاعة."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">أ</div>
+                        <div class="reviewer-info">
+                            <h4>أميرة</h4>
+                            <p>أم لرضيع 3 أشهر</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"الجودة رهيبة! وسادة النوم غيرت نوم ابني تمامًا. كانت رأسه تسطو قليلًا من الناحية اليسرى، وبعد استخدام الوسادة أصبحت متناسقة تمامًا. أنصح الجميع بها!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">س</div>
+                        <div class="reviewer-info">
+                            <h4>سارة</h4>
+                            <p>أم لرضيع 5 أشهر</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"أحذية الأطفال الناعمة كانت أفضل شراء هذا الشهر! طفلي يحب ارتداءها، وهي تسمح لقدمه بالتنفس والحركة بحرية. الجودة تفوق السعر بكثير."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">م</div>
+                        <div class="reviewer-info">
+                            <h4>منى</h4>
+                            <p>أم لرضيعة 8 أشهر</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"اللعب العضوية رائعة! آمنة تمامًا لطفلي الذي يضع كل شيء في فمه. أشعر بالراحة عندما أراه يلعب بها. بالإضافة إلى أن التصميم جميل جدًا."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">ن</div>
+                        <div class="reviewer-info">
+                            <h4>نورة</h4>
+                            <p>أم لرضيع 10 أشهر</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"الجودة والسرعة في التوصيل ممتازة! تجربتي مع عالم صغيري كانت رائعة من أول لحظة إلى آخر تفصيلة."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">ك</div>
+                        <div class="reviewer-info">
+                            <h4>كريم</h4>
+                            <p>أب لطفلين</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"أفضل متجر للأطفال! كل منتج يشعرك بأنه تم اختياره بعناية فائقة. أنصح الجميع بالشراء من هنا."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">ف</div>
+                        <div class="reviewer-info">
+                            <h4>فاطمة</h4>
+                            <p>أم لرضيع 6 أشهر</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Order Section -->
+    <section class="order-section" id="order-section">
+        <h2 class="section-title">أكمل طلبك في 30 ثانية فقط</h2>
+        <form class="order-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fullName">الاسم الكامل</label>
+                    <input type="text" id="fullName" class="form-control" placeholder="أدخل اسمك الكامل">
+                </div>
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="أدخل رقم هاتفك">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="province">الولاية</label>
+                    <select id="province" class="form-control">
+                        <option value="">اختر الولاية</option>
+                        <option value="01">أدرار</option>
+                        <option value="02">الشلف</option>
+                        <option value="03">الأغواط</option>
+                        <option value="04">أم البواقي</option>
+                        <option value="05">باتنة</option>
+                        <option value="06">بجاية</option>
+                        <option value="07">بسكرة</option>
+                        <option value="08">بشار</option>
+                        <option value="09">البليدة</option>
+                        <option value="10">البويرة</option>
+                        <option value="11">تمنراست</option>
+                        <option value="12">تبسة</option>
+                        <option value="13">تلمسان</option>
+                        <option value="14">تيارت</option>
+                        <option value="15">تيزي وزو</option>
+                        <option value="16">الجزائر</option>
+                        <option value="17">الجلفة</option>
+                        <option value="18">جيجل</option>
+                        <option value="19">سطيف</option>
+                        <option value="20">سعيدة</option>
+                        <option value="21">سكيكدة</option>
+                        <option value="22">سيدي بلعباس</option>
+                        <option value="23">عنابة</option>
+                        <option value="24">قالمة</option>
+                        <option value="25">قسنطينة</option>
+                        <option value="26">المدية</option>
+                        <option value="27">مستغانم</option>
+                        <option value="28">المسيلة</option>
+                        <option value="29">معسكر</option>
+                        <option value="30">ورقلة</option>
+                        <option value="31">وهران</option>
+                        <option value="32">البيض</option>
+                        <option value="33">ايليزى</option>
+                        <option value="34">برج بوعريريج</option>
+                        <option value="35">بومرداس</option>
+                        <option value="36">الطارف</option>
+                        <option value="37">تيندوف</option>
+                        <option value="38">تيسمسيلت</option>
+                        <option value="39">وادي سوف</option>
+                        <option value="40">خنشلة</option>
+                        <option value="41">سوق أهراس</option>
+                        <option value="42">تيبازة</option>
+                        <option value="43">ميلة</option>
+                        <option value="44">عين الدفلة</option>
+                        <option value="45">النعامة</option>
+                        <option value="46">عين تموشنت</option>
+                        <option value="47">غرداية</option>
+                        <option value="48">غليزان</option>
+                        <option value="49">تيميمون</option>
+                        <option value="50">بورزق</option>
+                        <option value="51">الرقيبة</option>
+                        <option value="52">الإدريسية</option>
+                        <option value="53">أولاد جلال</option>
+                        <option value="54">بئر غبالو</option>
+                        <option value="55">المسيلة</option>
+                        <option value="56">وادي الطاقة</option>
+                        <option value="57">برج باجي مختار</option>
+                        <option value="58">إن غليس</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="city">المدينة</label>
+                    <input type="text" id="city" class="form-control" placeholder="أدخل مدينتك">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>نوع التوصيل</label>
+                <div style="display: flex; gap: 20px; margin-top: 10px;">
+                    <label style="flex: 1;">
+                        <input type="radio" name="delivery" value="home" checked> 
+                        إلى المنزل
+                    </label>
+                    <label style="flex: 1;">
+                        <input type="radio" name="delivery" value="office"> 
+                        إلى مكتب التوصيل
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">تأكيد الطلب – دفع عند الاستلام</button>
+            <p class="payment-info">✅ الدفع عند الاستلام متاح | 🚚 توصيل سريع في 48 ساعة</p>
+        </form>
+    </section>
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <h2 class="section-title" style="color: white;">لماذا تختار عالم صغيري؟</h2>
+        <div class="trust-badges">
+            <div class="badge">
+                <div class="badge-icon"><i class="fas fa-certificate"></i></div>
+                <h3>جودة عالمية</h3>
+                <p>منتجاتنا من مصادر موثوقة في أوروبا وآسيا، مع شهادات أمان دولية</p>
+            </div>
+            <div class="badge">
+                <div class="badge-icon"><i class="fas fa-heart"></i></div>
+                <h3>آمنة 100%</h3>
+                <p>خالية من BPA، الفثالات، والمواد السامة. تم اختبارها على أيدٍ أمينة</p>
+            </div>
+            <div class="badge">
+                <div class="badge-icon"><i class="fas fa-medal"></i></div>
+                <h3>تصميم ذكي</h3>
+                <p>لا نبيع منتجات، نقدم حلولًا: كل منتج يحل مشكلة حقيقية لطفلك</p>
+            </div>
+            <div class="badge">
+                <div class="badge-icon"><i class="fas fa-users"></i></div>
+                <h3>1000+ عميل راضٍ</h3>
+                <p>رضاء العملاء هو أولويتنا القصوى</p>
+            </div>
+        </div>
+    </section>
+    <!-- Shopping Cart -->
+    <div class="cart-icon" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart" style="font-size: 1.8rem; color: var(--dark-blue);"></i>
+        <div class="cart-count" id="cartCount">0</div>
+    </div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            سلة التسوق
+            <div class="cart-close" onclick="toggleCart()"><i class="fas fa-times"></i></div>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- المنتجات المضافة ستظهر هنا -->
+        </div>
+    </div>
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/213123456789" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Audio Elements -->
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/audio/2021/08/17/audio_4e15b1152d.mp3" type="audio/mp3">
+    </audio>
+    <audio id="addSound">
+        <source src="https://cdn.pixabay.com/audio/2022/02/28/audio_3a2b5b8d3a.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        // تشغيل الموسيقى عند التفاعل الأول
+        let musicPlayed = false;
+        document.addEventListener('click', function() {
+            if (!musicPlayed) {
+                const bgMusic = document.getElementById('bgMusic');
+                bgMusic.volume = 0.5; // تم رفع الصوت إلى 50% (واضح لكن ليس عاليًا)
+                bgMusic.play().catch(e => console.log("فشل تشغيل الموسيقى"));
+                musicPlayed = true;
+            }
+        });
+
+        // عداد الوقت الموحد لجميع الزوار
+        const targetDate = new Date("2024-10-30T23:59:59").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = "<div style='text-align:center;color:#e53935;font-weight:bold'>انتهى العرض!</div>";
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+        
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // سلة التسوق
+        let cart = [];
+        
+        function addToCart(name, price) {
+            // تشغيل صوت الإشعار مباشرة (يعمل دائمًا، حتى بدون موسيقى)
+            const sound = document.getElementById('addSound');
+            sound.volume = 0.9; // تم رفع الصوت ليكون مسموعًا جيدًا
+            sound.currentTime = 0;
+            sound.play().catch(e => console.log("فشل تشغيل صوت الإشعار"));
+
+            // إضافة المنتج إلى السلة
+            cart.push({name, price});
+            updateCart();
+        }
+        
+        function updateCart() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            
+            cartCount.innerText = cart.length;
+            
+            cartItems.innerHTML = '';
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align:center;color:#999;padding:20px;">سلة التسوق فارغة</p>';
+            } else {
+                cart.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'cart-item';
+                    itemDiv.innerHTML = `
+                        <div class="cart-item-image">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">${item.price} دج</div>
+                        </div>
+                    `;
+                    cartItems.appendChild(itemDiv);
+                });
+            }
+        }
+        
+        function toggleCart() {
+            const sidebar = document.getElementById('cartSidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('open');
+        }
+
+        // تحديث السلة عند التحميل
+        updateCart();
+    </script>
+</body>
+</html>
